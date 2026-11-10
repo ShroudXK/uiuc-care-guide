@@ -1,20 +1,58 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#113d39">
-  <meta name="description" content="A bilingual, step-by-step guide to healthcare for UIUC international students. Learn where to go, how to book, and what to ask.">
-  <title>Illinois Care Guide · UIUC 留学生就医导航</title>
+  <meta name="description" content="A step-by-step healthcare navigation guide for UIUC international students. Learn where to go, how to book, and what to ask. Not medical advice.">
+  <title>Illinois Care Guide</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23123e39'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='%23daec9b'%3E*%3C/text%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var id = 'G-68T1ZEGEJX';
+      try {
+        var consent = localStorage.getItem('icg-analytics-consent');
+        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+        var gpc = navigator.globalPrivacyControl === true;
+        if (consent !== 'granted' || dnt === '1' || dnt === 'yes' || gpc) window['ga-disable-' + id] = true;
+      } catch (e) {
+        window['ga-disable-' + id] = true;
+      }
+      try {
+        var stored = localStorage.getItem('icg-language') || '';
+        var lang = 'en';
+        if (stored === 'en' || stored === 'zh-Hans' || stored === 'zh-Hant' || stored === 'ko' || stored === 'hi') lang = stored;
+        else if (stored === 'zh' || stored === 'zh-CN' || stored === 'zh-cn') lang = 'zh-Hans';
+        else if (stored === 'zh-TW' || stored === 'zh-HK' || stored === 'zh-Hant') lang = 'zh-Hant';
+        else {
+          var list = navigator.languages || [navigator.language || 'en'];
+          var l0 = String(list[0] || 'en').toLowerCase();
+          if (l0.indexOf('zh-tw') === 0 || l0.indexOf('zh-hk') === 0 || l0.indexOf('zh-mo') === 0 || l0.indexOf('zh-hant') === 0) lang = 'zh-Hant';
+          else if (l0.indexOf('zh') === 0) lang = 'zh-Hans';
+          else if (l0.indexOf('ko') === 0) lang = 'ko';
+          else if (l0.indexOf('hi') === 0) lang = 'hi';
+        }
+        document.documentElement.lang = lang;
+      } catch (e2) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+  <script src="./official.js"></script>
+  <script src="./i18n.js"></script>
+  <script src="./analytics.config.js"></script>
+  <script src="./analytics.js"></script>
+  <script src="./locales/en.js"></script>
+  <script src="./locales/zh-Hans.js"></script>
+  <script src="./locales/zh-Hant.js"></script>
+  <script src="./locales/ko.js"></script>
+  <script src="./locales/hi.js"></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content / 跳转到主要内容</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <div id="app"></div>
 </body>
 </html>

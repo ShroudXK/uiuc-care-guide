@@ -1,0 +1,13 @@
+{
+  "name": "uiuc-care-guide",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/locales.test.mjs tests/analytics.test.mjs && playwright test",
+    "test:unit": "node --test tests/locales.test.mjs tests/analytics.test.mjs",
+    "test:browser": "playwright test",
+    "start": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
+}
